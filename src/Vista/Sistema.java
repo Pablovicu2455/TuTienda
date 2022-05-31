@@ -20,15 +20,20 @@ import Modelo.Venta;
 import Modelo.VentaDao;
 import Modelo.login;
 import Reportes.Grafico;
+import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import wassap.SwingBrowser;
 
 /**
  *
@@ -58,6 +63,10 @@ public final class Sistema extends javax.swing.JFrame {
 
     public Sistema() {
         initComponents();
+        /*SwingBrowser browser = new SwingBrowser();
+        browser.loadURL("http://google.com");
+        browser.setBounds(1, 1, jPanelw.getWidth() - 1, jPanelw.getHeight() - 1);
+        jPanelw.add(browser);*/
        setIconImage(getIconImage());
     }
     
@@ -69,6 +78,12 @@ public final class Sistema extends javax.swing.JFrame {
 
     public Sistema(login priv) {
         initComponents();
+        //////////////////////////////////////////////////
+        SwingBrowser browser = new SwingBrowser();
+        browser.loadURL("http://google.com");
+        browser.setBounds(1, 1, jPanelw.getWidth() - 1, jPanelw.getHeight() - 1);
+        jPanelw.add(browser);
+      
         setIconImage(getIconImage());
         this.setLocationRelativeTo(null);
         Midate.setDate(fechaVenta);
@@ -317,7 +332,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnNuevoProveedor = new javax.swing.JButton();
         btnEliminarProveedor = new javax.swing.JButton();
         txtIdProveedor = new javax.swing.JTextField();
-        jPanel15 = new javax.swing.JPanel();
+        jPanelw = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnConfig = new javax.swing.JButton();
@@ -347,11 +362,11 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 850, 120));
+        getContentPane().add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 850, 90));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1215,18 +1230,18 @@ public final class Sistema extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("3", jPanel4);
 
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelwLayout = new javax.swing.GroupLayout(jPanelw);
+        jPanelw.setLayout(jPanelwLayout);
+        jPanelwLayout.setHorizontalGroup(
+            jPanelwLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 845, Short.MAX_VALUE)
         );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelwLayout.setVerticalGroup(
+            jPanelwLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 462, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("8", jPanel15);
+        jTabbedPane1.addTab("8", jPanelw);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 95, 850, 490));
 
@@ -1919,6 +1934,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     private void btnWassapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWassapActionPerformed
        jTabbedPane1.setSelectedIndex(7);
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_btnWassapActionPerformed
 
@@ -2050,7 +2066,6 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2059,6 +2074,7 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanelw;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
